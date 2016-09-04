@@ -12,9 +12,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 function main() {
     var keys;
-    app.get('/couchbaseid/:key', function (request, response) {
+    app.get('/couchbaseid/:key', function(request, response) {
 
-        var stringofKeys_inRequest= request.params.key; // primary key to search the DB
+        var stringofKeys_inRequest = request.params.key; // primary key to search the DB
         var string_withoutSpace = stringofKeys_inRequest.replace(/ /g, ''); // elinimating whitespaces from the string
         var keys_withDuplicate = string_withoutSpace ? string_withoutSpace.split(',') : [];  // array is created from string
         keys = lodash.uniq(keys_withDuplicate); // Eliminating duplicates
@@ -24,14 +24,14 @@ function main() {
     });
 }
 main();
-app.get('/solrquery/:key', function (request, response) {
+app.get('/solrquery/:key', function(request, response) {
 
-    var solrqueryString= request.params.key;
+    var solrqueryString = request.params.key;
     indexSearch(solrqueryString, response);
 
 });
 
-app.listen(8014, function () {
+app.listen(8014, function() {
     console.log('1. SERVER ACTIVE:');
     console.log('\n Hit the Link : http://127.0.0.1:8014/couchbaseid/asset_-1464108288001_assetlite');
 });

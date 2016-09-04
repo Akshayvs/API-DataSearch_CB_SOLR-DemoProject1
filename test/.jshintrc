@@ -1,0 +1,20 @@
+{
+  "browser": true,
+  "jquery": true,
+  "node": true,
+  "esnext": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "latedef": "nofunc",
+  "loopfunc": true,
+  "maxlen": 200,
+  "newcap": true,
+  "quotmark": "single",
+  "strict": true,
+  "undef": true,
+  "unused": true,
+  "maxcomplexity": 20,
+  "eqnull": true,
+  "mocha": true,
+  "expr": true
+}
